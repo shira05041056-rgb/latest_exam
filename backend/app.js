@@ -16,6 +16,7 @@ app.use("/my-app", myAppRoute)
 
 app.use((err, req, res, next) => {
     if (err.statusCode){
+        console.log(err)
         res.status(err.statusCode).send(err.message);
     }else{
         res.status(500).send("somthing wrong");
